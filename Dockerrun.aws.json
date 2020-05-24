@@ -3,25 +3,25 @@
     "containerDefinitions": [
         {
             "name": "client",
-            "image": "stephengrider/multi-client",
+            "image": "abhinav10p/multi-client",
             "hosting": "client",
             "essential": true
         },
         {
             "name": "server",
-            "image": "stephengrider/multi-server",
+            "image": "abhinav10p/multi-server",
             "hosting": "api",
             "essential": false
         },
         {
             "name": "worker",
-            "image": "stephengrider/multi-worker",
+            "image": "abhinav10p/multi-worker",
             "hosting": "worker",
             "essential": false
         },
         {
             "name": "nginx",
-            "image": "stephengrider/multi-worker",
+            "image": "abhinav10p/multi-worker",
             "hosting": "worker",
             "essential": false,
             "portMappings": [

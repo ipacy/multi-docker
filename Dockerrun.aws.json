@@ -1,0 +1,39 @@
+{
+    "AWSEBDockerrunVersion": 1,
+    "containerDefinitions": [
+        {
+            "name": "client",
+            "image": "stephengrider/multi-client",
+            "hosting": "client",
+            "essential": true
+        },
+        {
+            "name": "server",
+            "image": "stephengrider/multi-server",
+            "hosting": "api",
+            "essential": false
+        },
+        {
+            "name": "worker",
+            "image": "stephengrider/multi-worker",
+            "hosting": "worker",
+            "essential": false
+        },
+        {
+            "name": "nginx",
+            "image": "stephengrider/multi-worker",
+            "hosting": "worker",
+            "essential": false,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": [
+                "client",
+                "server"
+            ]
+        }
+    ]
+}
